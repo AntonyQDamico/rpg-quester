@@ -19,7 +19,7 @@ function generateRandomQuest() {
 
     switch (chosenQuest){
         case 'Explore':
-            finalQuestString = `There have been rumors about ${treasure} in the ${subLocation} of ${chosenLocation}. \
+            finalQuestString = `There have been rumors about a ${treasure} in the ${subLocation} of ${chosenLocation}. \
             You should go check it out. Watch out though, I have heard about ${chosenMonster} in the area.`;
             console.log(finalQuestString);
             return finalQuestString;
