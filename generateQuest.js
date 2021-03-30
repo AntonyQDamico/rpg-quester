@@ -6,8 +6,8 @@ TODOs:
 * Print final message
 */
 
-import * as locations from 'locations.js'
-import * as monsters from 'monsters.js'
+import * as locations from './locations.js'
+import * as monsters from './monsters.js'
 
 const questTypes = ['Explore','Gather','Hunt'];
 
