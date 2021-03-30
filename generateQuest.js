@@ -6,32 +6,38 @@ TODOs:
 * Print final message
 */
 
-import * as locations from locations.js
-import * as monsters from monsters.js
+import * as locations from 'locations.js'
+import * as monsters from 'monsters.js'
 
-const questTypes = ['Explore','Gather','Hunt']; // Quest types available
+const questTypes = ['Explore','Gather','Hunt'];
 
 function generateRandomQuest() {
     const chosenQuest = questTypes[Math.floor(Math.random() * questTypes.length)];
     const chosenLocation = locations.getLocation();
-    const chosenMonster = monsters.getMonster(chosenLocation);
+    const chosenMonster = monsters.getMonster(chosenLocation.type);
+
+    const chosenSubLocation = locations.getSubLocation(chosenLocation);
+    const chosenResource = locations.getResource(chosenLocation);
+    const chosenMonsterPart = monsters.getMonsterPart(chosenMonster);
+    const chosenMonsterNumber = monsters.getMonsterNumber(chosenMonster);
+
     var finalQuestString = '';
 
     switch (chosenQuest){
         case 'Explore':
-            finalQuestString = `There have been rumors about a ${treasure} in the ${subLocation} of ${chosenLocation}. \
-            You should go check it out. Watch out though, I have heard about ${chosenMonster} in the area.`;
+            finalQuestString = `There have been rumors about a ${chosenLocation.treasure} in the ${chosenSubLocation} of ${chosenLocation.type}. \
+            You should go check it out. Watch out though, I have heard about ${chosenMonster.type} in the area.`;
             console.log(finalQuestString);
             return finalQuestString;
 
         case 'Gather':
-            finalQuestString = `We are running low on ${resource} and ${monsterPart}. Could you go get some from ${chosenLocation}?`;
+            finalQuestString = `We are running low on ${chosenResource} and ${chosenMonsterPart}. Could you go get some from ${chosenLocation.type}?`;
             console.log(finalQuestString);
             return finalQuestString;
 
         case 'Hunt':
-            finalQuestString = `${chosenMonster} have been harassing the village. I need you to deal with ${monsterNumber} \
-            of them to keep them in check. Bring back some ${monsterPart} as proof.`;
+            finalQuestString = `${chosenMonster.type} have been harassing the village. I need you to deal with ${chosenMonsterNumber} \
+            of them to keep them in check. Bring back some ${chosenMonsterPart} as proof.`;
             console.log(finalQuestString);
             return finalQuestString;
 
