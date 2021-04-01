@@ -49,15 +49,16 @@ Run the program by calling the generateQuest.js file in the console while other 
 
 ## Features
 List of features ready and TODOs for future development
-* no features yet
+* Provides a random quest hook
+* Easily expand on locations or monsters
 
 To-do list:
-* Pick a random quest type
-* Pick a random location
-* Pick a random monster based on the location picked. Some monsters will only work with some locations.
-* Make output message templates
-* Generate location objects/database {zone, sub-zone, resourse list}
-* Generate monster objects/database {type, loot list, location, group size}
+* ~Pick a random quest type~
+* ~Pick a random location~
+* ~Pick a random monster based on the location picked. Some monsters will only work with some locations.~
+* ~Make output message templates~
+* ~Generate location objects/database {zone, sub-zone, resourse list}~
+* ~Generate monster objects/database {type, loot list, location, group size}~
 
 ## Status
 Project is: _in progress_
